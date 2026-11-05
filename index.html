@@ -1,0 +1,182 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Management System</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="dashboard">
+
+    <!-- Sidebar -->
+    <aside class="sidebar">
+        <h2>✚ MediCare</h2>
+        <p class="side-subtitle">Hospital Management</p>
+
+        <nav>
+            <a href="#dashboard" class="active">▦ Dashboard</a>
+            <a href="#patient-form">＋ Add Patient</a>
+            <a href="#patients">♡ Patient Records</a>
+        </nav>
+
+        <div class="sidebar-bottom">
+            <p>Patient Care System</p>
+            <small>Version 1.0</small>
+        </div>
+    </aside>
+
+    <!-- Main Content -->
+    <main class="main-content">
+
+        <header class="topbar" id="dashboard">
+            <div>
+                <h1>Patient Management</h1>
+                <p>Welcome to your hospital dashboard</p>
+            </div>
+            <div class="admin">👩‍⚕️ Admin</div>
+        </header>
+
+        <!-- Statistics -->
+        <section class="stats">
+
+            <div class="stat-card">
+                <span>Total Patients</span>
+                <h2 id="totalPatients">0</h2>
+                <p>Registered patients</p>
+            </div>
+
+            <div class="stat-card">
+                <span>Male Patients</span>
+                <h2 id="malePatients">0</h2>
+                <p>Male registrations</p>
+            </div>
+
+            <div class="stat-card">
+                <span>Female Patients</span>
+                <h2 id="femalePatients">0</h2>
+                <p>Female registrations</p>
+            </div>
+
+        </section>
+
+        <!-- Patient Form -->
+        <section class="form-section" id="patient-form">
+
+            <div class="section-heading">
+                <h2 id="formTitle">＋ Add New Patient</h2>
+                <p>Enter patient information below</p>
+            </div>
+
+            <form id="patientForm">
+
+                <input type="hidden" id="editIndex">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+                        <label>Patient Name</label>
+                        <input type="text" id="name"
+                               placeholder="Enter patient name" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Age</label>
+                        <input type="number" id="age"
+                               placeholder="Enter age" min="1" max="120" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Gender</label>
+                        <select id="gender" required>
+                            <option value="">Select Gender</option>
+                            <option value="Male">Male</option>
+                            <option value="Female">Female</option>
+                            <option value="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Contact Number</label>
+                        <input type="tel" id="contact"
+                               placeholder="10-digit mobile number"
+                               pattern="[0-9]{10}" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Disease</label>
+                        <input type="text" id="disease"
+                               placeholder="Enter disease" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label>Doctor Name</label>
+                        <input type="text" id="doctor"
+                               placeholder="Enter doctor name" required>
+                    </div>
+
+                </div>
+
+                <div class="form-buttons">
+                    <button type="submit" class="add-btn" id="submitBtn">
+                        Add Patient
+                    </button>
+
+                    <button type="reset" class="reset-btn" id="resetBtn">
+                        Clear
+                    </button>
+                </div>
+
+            </form>
+        </section>
+
+        <!-- Patient Records -->
+        <section class="records-section" id="patients">
+
+            <div class="records-header">
+                <div>
+                    <h2>Patient Records</h2>
+                    <p>Manage all registered patients</p>
+                </div>
+
+                <input type="text" id="searchInput"
+                       placeholder="🔍 Search patient...">
+            </div>
+
+            <div class="table-container">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Patient ID</th>
+                            <th>Name</th>
+                            <th>Age</th>
+                            <th>Gender</th>
+                            <th>Contact</th>
+                            <th>Disease</th>
+                            <th>Doctor</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="patientTable">
+                        <!-- JavaScript displays records here -->
+                    </tbody>
+                </table>
+            </div>
+
+            <p id="emptyMessage">No patient records available.</p>
+
+        </section>
+
+        <footer>
+            © 2026 MediCare Patient Management System
+        </footer>
+
+    </main>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
