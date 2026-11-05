@@ -2,6 +2,8 @@
 
 A simple and responsive **Patient Management System** developed using HTML, CSS, and JavaScript. This project helps manage patient records efficiently by implementing CRUD (Create, Read, Update, Delete) operations.
 
+ https://polisetty-varalakshmi.github.io/patient-management-system/
+
 ## 📌 Project Overview
 
 The Patient Management System is a frontend web application designed to maintain and manage patient information in an organized manner. It provides an easy-to-use dashboard with a modern maroon and white theme.
